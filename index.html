@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <header>
+      <div class="head">
+        <div>
+          <img src="./images/logo.svg" alt="logo" class="logo" />
+        </div>
+        <div class="unit-container">
+          <div class="drop-down-cont">
+            <img src="./images/icon-units.svg" alt="units" class="icon" />
+            <p>Units</p>
+            <img src="./images/icon-dropdown.svg" alt="dropdown" />
+          </div>
+
+          <div class="units">
+            <button>Switch to imperial</button>
+            <h5>Temperature</h5>
+            <p>Celsius(°C) <span>✔</span></p>
+            <p>Fahrenheit(°F) <span>✔</span></p>
+            <hr />
+            <h5>Wind Speed</h5>
+            <p>Km/h <span>✔</span></p>
+            <p>mph<span>✔</span></p>
+            <hr />
+            <h5>Precipitation</h5>
+            <p>Millimeters (mm) <span>✔</span></p>
+            <p>Inches (in) <span>✔</span></p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="section1">
+        <div>
+          <p class="section1-text">How's the sky looking today?</p>
+        </div>
+        <!-- search bar -->
+        <div class="main-search">
+          <div class="search">
+            <img
+              src="./images/icon-search.svg"
+              alt="search"
+              class="search-icon"
+            />
+            <input
+              type="search"
+              placeholder="Search for a place..."
+              class="search-input"
+            />
+          </div>
+          <button type="submit" class="submit-search">Search</button>
+        </div>
+      </section>
+      <section>
+        <div class="result">
+          <div class="wrap-first-result">
+            <div class="first-result"></div>
+          </div>
+          <div class="second-result">
+            <div class="grid1">
+              <h2>feels Like</h2>
+              <p>64*</p>
+            </div>
+            <div class="grid1">
+              <h2>Humidity</h2>
+              <p>43%</p>
+            </div>
+            <div class="grid1">
+              <h2>Wind</h2>
+              <p>6mph</p>
+            </div>
+            <div class="grid1">
+              <h2>Precipitation</h2>
+              <p>0 in</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2>Daily Forecast</h2>
+          <div class="daily-forcast">
+            <div class="daily-forcast-grid">
+              <h2>Tue</h2>
+              <img
+                src="./images/icon-partly-cloudy.webp"
+                alt=""
+                width="50"
+                height="50"
+              />
+              <div class="daily-forcast-temp">
+                <p>68*</p>
+                <p>57*</p>
+              </div>
+            </div>
+            <div class="daily-forcast-grid">
+              <p>Wed</p>
+              <img
+                src="./images/icon-partly-cloudy.webp"
+                alt=""
+                width="50"
+                height="50"
+              />
+              <div class="daily-forcast-temp">
+                <p>68*</p>
+                <p>57*</p>
+              </div>
+            </div>
+            <div class="daily-forcast-grid">
+              <p>Thu</p>
+              <img
+                src="./images/icon-partly-cloudy.webp"
+                alt=""
+                width="50"
+                height="50"
+              />
+              <div class="daily-forcast-temp">
+                <p>68*</p>
+                <p>57*</p>
+              </div>
+            </div>
+            <div class="daily-forcast-grid">
+              <p>Fri</p>
+              <img
+                src="./images/icon-partly-cloudy.webp"
+                alt=""
+                width="50"
+                height="50"
+              />
+              <div class="daily-forcast-temp">
+                <p>68*</p>
+                <p>57*</p>
+              </div>
+            </div>
+            <div class="daily-forcast-grid">
+              <p>Sat</p>
+              <img
+                src="./images/icon-partly-cloudy.webp"
+                alt=""
+                width="50"
+                height="50"
+              />
+              <div class="daily-forcast-temp">
+                <p>68*</p>
+                <p>57*</p>
+              </div>
+            </div>
+            <div class="daily-forcast-grid">
+              <p>Sun</p>
+              <img
+                src="./images/icon-partly-cloudy.webp"
+                alt=""
+                width="50"
+                height="50"
+              />
+              <div class="daily-forcast-temp">
+                <p>68*</p>
+                <p>57*</p>
+              </div>
+            </div>
+            <div class="daily-forcast-grid">
+              <p>Mon</p>
+              <img
+                src="./images/icon-partly-cloudy.webp"
+                alt=""
+                width="50"
+                height="50"
+              />
+              <div class="daily-forcast-temp">
+                <p>68*</p>
+                <p>57*</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fourth-result-wrapper">
+          <div class="hourly">
+            <h2>Hourly Forecast</h2>
+            <div class="hourly-day">
+              <div class="selected-container">
+                <div class="selected-day">
+                  <p>Monday</p>
+                </div>
+                <img src="./images/icon-dropdown.svg" alt="" />
+              </div>
+              <ul class="hourly-day-days">
+                <li>Monday</li>
+                <li>Tuesday</li>
+                <li>Wednesday</li>
+                <li>Thursday</li>
+                <li>Friday</li>
+                <li>Saturday</li>
+                <li>Sunday</li>
+              </ul>
+            </div>
+          </div>
+          <div class="hourly-grid">
+            <div class="hourly-result">
+              <div class="hourly-time-img">
+                <img
+                  src="./images/icon-fog.webp"
+                  alt=""
+                  width="40"
+                  height="40"
+                />
+                <p>3 PM</p>
+              </div>
+              <p>17°</p>
+            </div>
+            <div class="hourly-result">
+              <div class="hourly-time-img">
+                <img
+                  src="./images/icon-fog.webp"
+                  alt=""
+                  width="40"
+                  height="40"
+                />
+                <p>3 PM</p>
+              </div>
+              <p>17°</p>
+            </div>
+            <div class="hourly-result">
+              <div class="hourly-time-img">
+                <img
+                  src="./images/icon-fog.webp"
+                  alt=""
+                  width="40"
+                  height="40"
+                />
+                <p>3 PM</p>
+              </div>
+              <p>17°</p>
+            </div>
+            <div class="hourly-result">
+              <div class="hourly-time-img">
+                <img
+                  src="./images/icon-fog.webp"
+                  alt=""
+                  width="40"
+                  height="40"
+                />
+                <p>3 PM</p>
+              </div>
+              <p>17°</p>
+            </div>
+            <div class="hourly-result">
+              <div class="hourly-time-img">
+                <img
+                  src="./images/icon-fog.webp"
+                  alt=""
+                  width="40"
+                  height="40"
+                />
+                <p>3 PM</p>
+              </div>
+              <p>17°</p>
+            </div>
+            <div class="hourly-result">
+              <div class="hourly-time-img">
+                <img
+                  src="./images/icon-fog.webp"
+                  alt=""
+                  width="40"
+                  height="40"
+                />
+                <p>3 PM</p>
+              </div>
+              <p>17°</p>
+            </div>
+            <div class="hourly-result">
+              <div class="hourly-time-img">
+                <img
+                  src="./images/icon-fog.webp"
+                  alt=""
+                  width="40"
+                  height="40"
+                />
+                <p>3 PM</p>
+              </div>
+              <p>17°</p>
+            </div>
+            <div class="hourly-result">
+              <div class="hourly-time-img">
+                <img
+                  src="./images/icon-fog.webp"
+                  alt=""
+                  width="40"
+                  height="40"
+                />
+                <p>3 PM</p>
+              </div>
+              <p>17°</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
