@@ -7,7 +7,7 @@
 body {
   background-color: hsl(243, 96%, 9%);
   color: #fff;
-  margin-bottom: 80px;
+  margin-bottom: 10px;
 }
 main,
 header {
@@ -44,6 +44,7 @@ header {
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
+  z-index: 1;
 }
 
 .units button {
@@ -176,7 +177,7 @@ hr {
 }
 
 .grid1 {
-  min-height: 100px;
+  height: 100px;
   border-radius: 10px;
   background-color: hsl(243, 23%, 30%);
   padding: 10px;
@@ -250,17 +251,18 @@ hr {
   height: 40px;
   background-color: hsl(243, 23%, 24%);
   border-radius: 10px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.253);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5px;
+  padding: 23px 10px;
 }
 .hourly-grid {
+  display: grid;
   grid-template-columns: 1fr;
   /* grid-template-rows: ; */
-  gap: 20px;
+  gap: 15px;
 }
 
 .daily-forcast-temp {
@@ -272,4 +274,101 @@ hr {
 .hourly-time-img {
   display: flex;
   align-items: center;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 583px) {
+  .first-result {
+    background-image: url("./images/bg-today-large.svg");
+    height: 286px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  main,
+  header {
+    max-width: 1020px;
+    margin: auto;
+  }
+
+  .head {
+    margin-top: 30px;
+    width: 100%;
+  }
+  .head .logo img {
+    height: 50px;
+    width: 100%;
+  }
+  .desktop-flex {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 30px;
+  }
+  .first-result {
+    height: 220px;
+    border-radius: 20px;
+  }
+
+  .grid1 {
+    height: 100px;
+  }
+
+  .fourth-result-wrapper {
+    flex: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .desktop-grid > div:first-child {
+    flex: 3;
+  }
+
+  .main-search {
+    flex-direction: row;
+    gap: 15px;
+    max-width: 600px;
+    margin: auto;
+  }
+  .search {
+    width: 100%;
+  }
+
+  .section1-text {
+    margin: 20px 0;
+  }
+
+  .submit-search {
+    width: 150px;
+    margin-top: 0;
+  }
+
+  .second-result {
+    display: grid;
+    margin: 20px 0;
+    gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .daily-forcast {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    /* grid-template-rows: repeat(3, auto); */
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .result {
+    width: 100%;
+  }
+  .wrap-first-result {
+    justify-content: flex-start;
+  }
+  .daily-forcast {
+    margin: 10px 0 0 0;
+  }
 }
