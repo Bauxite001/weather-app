@@ -26,10 +26,10 @@
           </div>
 
           <div class="units">
-            <button>Switch to imperial</button>
+            <button>Switch to Imperial</button>
             <h5>Temperature</h5>
-            <p>Celsius(°C) <span>✔</span></p>
-            <p>Fahrenheit(°F) <span>✔</span></p>
+            <p>Celsius (°C) <span>✔</span></p>
+            <p>Fahrenheit (°F) <span>✔</span></p>
             <hr />
             <h5>Wind Speed</h5>
             <p>Km/h <span>✔</span></p>
@@ -45,7 +45,7 @@
     <main>
       <section class="section1">
         <div>
-          <p class="section1-text">How's the sky looking today?</p>
+          <h1 class="section1-text">How's the sky looking today?</h1>
         </div>
         <!-- search bar -->
         <div class="main-search">
@@ -68,24 +68,42 @@
         <div>
           <div class="result">
             <div class="wrap-first-result">
-              <div class="first-result"></div>
+              <!-- BACKGROUND -->
+              <div class="first-result">
+                <div class="background-words">
+                  <p class="country">Berlin, Germany</p>
+                  <p class="day">Tuesday, Aug 5 2026</p>
+                </div>
+                <div class="background-icon">
+                  <img
+                    src="./images/icon-rain.webp"
+                    alt=""
+                    width="60"
+                    height="60"
+                    class="surface-image"
+                  />
+                  <p class="background-temp">20°</p>
+                </div>
+              </div>
             </div>
+
+            <!-- AFTER BACKGROUND -->
             <div class="second-result">
               <div class="grid1">
-                <h2>feels Like</h2>
-                <p>64*</p>
+                <h2 class="temp">Feels Like</h2>
+                <p class="temp-degree">64°</p>
               </div>
               <div class="grid1">
-                <h2>Humidity</h2>
-                <p>43%</p>
+                <h2 class="humidity">Humidity</h2>
+                <p class="percentage">43%</p>
               </div>
               <div class="grid1">
-                <h2>Wind</h2>
-                <p>6mph</p>
+                <h2 class="wind">Wind</h2>
+                <p class="speed">6 mph</p>
               </div>
               <div class="grid1">
-                <h2>Precipitation</h2>
-                <p>0 in</p>
+                <h2 class="precipitation">Precipitation</h2>
+                <p class="size">0 in</p>
               </div>
             </div>
           </div>
