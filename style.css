@@ -37,17 +37,16 @@ header {
   display: flex;
 }
 
-.unit-container .units {
+.units {
   position: absolute;
   top: 40px;
   right: 0;
-  min-width: 200px;
+  min-width: 180px;
   min-height: 300px;
   padding: 10px 10px 0 12px;
   background-color: hsl(243, 27%, 20%);
   border-radius: 8px;
   box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.452);
-  display: flex;
   flex-direction: column;
   z-index: 1;
   display: none;
@@ -75,6 +74,10 @@ header {
   font-size: 15px;
   padding: 8px 20px 8px 8px;
   border-radius: 8px;
+}
+
+.units span {
+  opacity: 0;
 }
 
 .units p {
@@ -126,6 +129,7 @@ hr {
   margin: 20px;
 }
 .main-search {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -163,6 +167,29 @@ hr {
   height: 20px;
   font-size: 18px;
   flex-grow: 1;
+}
+
+.search-suggestions {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  background-color: hsl(243, 27%, 20%);
+  border-radius: 10px;
+  padding: 10px;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 20;
+}
+
+.search-suggestions div {
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.search-suggestions div:hover {
+  background-color: hsl(243, 23%, 24%);
 }
 
 .submit-search {
@@ -306,7 +333,7 @@ hr {
   background-color: hsl(243, 23%, 20%);
   top: 30px;
   right: 0;
-  width: 200px;
+  width: 180px;
   z-index: 1;
   border-radius: 8px;
   padding: 6px 8px;
@@ -365,12 +392,16 @@ hr {
   .background-words {
     text-align: left;
   }
+
+  .section1-text {
+    font-size: 45px;
+  }
 }
 
 @media (min-width: 1024px) {
   main,
   header {
-    max-width: 1100px;
+    max-width: 1000px;
     margin: auto;
     margin-top: 10px;
   }
@@ -400,7 +431,6 @@ hr {
 
   .fourth-result-wrapper {
     flex: 1;
-    flex: 1;
     display: flex;
     flex-direction: column;
   }
@@ -411,7 +441,7 @@ hr {
   .main-search {
     flex-direction: row;
     gap: 15px;
-    max-width: 600px;
+    max-width: 500px;
     margin: auto;
     margin-top: 20px;
   }
@@ -451,4 +481,12 @@ hr {
   .daily-forcast {
     margin: 10px 0 0 0;
   }
+}
+
+/* javascript */
+.highlighted {
+  background-color: hsl(243, 23%, 9%);
+}
+.make-visible {
+  display: block;
 }

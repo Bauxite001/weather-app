@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
+    <script type="module" src="./main.js"></script>
     <title>Weather App</title>
   </head>
   <body>
@@ -26,18 +27,18 @@
           </div>
 
           <div class="units">
-            <button>Switch to Imperial</button>
+            <button class="unit-button">Switch to Imperial</button>
             <h5>Temperature</h5>
-            <p>Celsius (°C) <span>✔</span></p>
-            <p>Fahrenheit (°F) <span>✔</span></p>
+            <p class="temp-cels">Celsius (°C) <span>✔</span></p>
+            <p class="temp-fah">Fahrenheit (°F) <span>✔</span></p>
             <hr />
             <h5>Wind Speed</h5>
-            <p>Km/h <span>✔</span></p>
-            <p>mph<span>✔</span></p>
+            <p class="speed-km">Km/h <span>✔</span></p>
+            <p class="speed-m">mph<span>✔</span></p>
             <hr />
             <h5>Precipitation</h5>
-            <p>Millimeters (mm) <span>✔</span></p>
-            <p>Inches (in) <span>✔</span></p>
+            <p class="precip-mil">Millimeters (mm) <span>✔</span></p>
+            <p class="precip-inch">Inches (in) <span>✔</span></p>
           </div>
         </div>
       </div>
@@ -61,6 +62,7 @@
               class="search-input"
             />
           </div>
+          <div class="search-suggestions"></div>
           <button type="submit" class="submit-search">Search</button>
         </div>
       </section>
@@ -226,7 +228,7 @@
             </div>
           </div>
           <div class="hourly-grid">
-            <div class="hourly-result">
+            <!-- <div class="hourly-result">
               <div class="hourly-time-img">
                 <img
                   src="./images/icon-fog.webp"
@@ -321,7 +323,7 @@
                 <p>3 PM</p>
               </div>
               <p>17°</p>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
