@@ -1,6 +1,8 @@
+import { hourlyForcast, dailyForcast, feelsLIke, dailyBg } from "./contents.js";
+
 let weatherData;
 
-export async function summoningJutsu(lat, lon) {
+export async function summoningJutsu(lat, lon, country, name) {
   const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=weather_code,temperature_2m_max,temperature_2m_min&hourly=temperature_2m,weather_code&current=weather_code,temperature_2m,precipitation,apparent_temperature,relative_humidity_2m,wind_speed_10m,is_day`;
   try {
     const response = await fetch(url);
@@ -32,23 +34,25 @@ export async function summoningJutsu(lat, lon) {
       temperature_2m_min: minTemp,
     } = weatherData.daily;
 
-    return {
+    `./images/`;
+
+    const today = new Date();
+    const option = {
+      weekday: "long",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    };
+    dailyBg(
+      country,
+      name,
+      today.toLocaleDateString("en-us", option),
       currentTemp,
       isDay,
-      prep,
-      feelsLike,
-      weatherCode,
-      humidity,
-      wind,
-      currentTime,
-      hourlyTime,
-      hourlyTemp,
-      hourlyWeatherCode,
-      dailyWeatherCode,
-      dailyTime,
-      maxTemp,
-      minTemp,
-    };
+    );
+    feelsLIke(feelsLike, humidity, wind, prep);
+    dailyForcast(dailyTime, weatherCode, minTemp, maxTemp);
+    hourlyForcast(hourlyWeatherCode, hourlyTime, hourlyTemp);
   } catch (err) {
     console.error("error", err);
   }
@@ -62,9 +66,19 @@ export async function geo(city) {
     const data = await response.json();
 
     console.log(data);
-    const { latitude: lat, longitude: lon, timezone, name } = data.results[0];
-    return { lat, lon };
+    const { latitude: lat, longitude: lon, country, name } = data.results[0];
+
+    summoningJutsu(lat, lon, country, name);
   } catch (error) {
     console.error(error);
   }
 }
+// const option = {
+//   weekday: "long",
+
+//   month: "short",
+
+//   day: "numeric",
+//   year: "numeric",
+// };
+// console.log(new Date().toLocaleDateString("en-us", { weekday: "long" }));

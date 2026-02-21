@@ -1,6 +1,7 @@
 import { dom } from "./variable.js";
 import { dropDown1, dropdown2, higlighted } from "./dropdown.js";
-import { geo, summoningJutsu } from "./api.js";
+import { geo } from "./api.js";
+
 const {
   unitDropDown,
   unitButton,
@@ -17,7 +18,6 @@ submitSearch.addEventListener("click", async () => {
 
   const city = searchInput.value;
   await geo(city);
-  await summoningJutsu();
   searchInput.value = "";
 });
 

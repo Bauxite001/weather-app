@@ -18,6 +18,6 @@ export const dom = {
   units: document.querySelector(".units"),
   secondDropDown: document.querySelectorAll(".hourly-day-days li"),
   selectedDay: document.querySelector(".selected-day p"),
-  // secondDropDown: document.querySelector(".selected-container"),
-  // secondDropDown: document.querySelector(".selected-container"),
+  dailyForecast: document.querySelector(".daily-forcast"),
+  secondResult: document.querySelector(".second-result"),
 };

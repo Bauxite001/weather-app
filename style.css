@@ -435,7 +435,7 @@ hr {
     flex-direction: column;
   }
   .desktop-grid > div:first-child {
-    flex: 3;
+    flex: 2;
   }
 
   .main-search {
