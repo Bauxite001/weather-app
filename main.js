@@ -1,6 +1,9 @@
 import { dom } from "./variable.js";
 import { dropDown1, dropdown2, higlighted } from "./dropdown.js";
 import { geo } from "./api.js";
+import { setupUnitSwitch } from "./api.js";
+
+setupUnitSwitch();
 
 const {
   unitDropDown,

@@ -307,10 +307,17 @@ hr {
   flex-direction: column;
   padding: 20px;
   justify-content: space-between;
+  /* overflow-y: hidden; */
 }
 .hourly {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+.hourly p {
+  white-space: nowrap;
   font-size: small;
 }
 
@@ -350,7 +357,7 @@ hr {
 }
 
 .hourly-result {
-  height: 40px;
+  height: 38px;
   background-color: hsl(243, 23%, 24%);
   border-radius: 10px;
   box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.253);
@@ -364,6 +371,9 @@ hr {
   grid-template-columns: 1fr;
   /* grid-template-rows: ; */
   gap: 12px;
+  max-height: 450px;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
 .daily-forcast-temp {
@@ -435,7 +445,7 @@ hr {
     flex-direction: column;
   }
   .desktop-grid > div:first-child {
-    flex: 2;
+    flex: 1;
   }
 
   .main-search {
