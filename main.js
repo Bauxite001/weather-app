@@ -1,13 +1,13 @@
 import { dom } from "./variable.js";
 import { dropDown1, dropdown2, higlighted } from "./dropdown.js";
 import { geo } from "./api.js";
-import { setupUnitSwitch } from "./api.js";
+import { landingPage } from "./errorState.js";
+import { searchLoad } from "./loadingState.js";
+const form = document.getElementById("search-form");
 
-setupUnitSwitch();
-
+landingPage();
 const {
   unitDropDown,
-  unitButton,
   units,
   hourlyDay,
   selectedCont,
@@ -16,11 +16,31 @@ const {
   submitSearch,
   searchInput,
 } = dom;
-submitSearch.addEventListener("click", async () => {
-  console.log(dom.searchInput.value);
+form.addEventListener("submit", async (e) => {
+  e.stopPropagation();
+  e.preventDefault();
+  if (searchInput.value.trim()) {
+    const city = searchInput.value;
+    searchLoad();
+    await geo(city);
+    form.blur();
+  } else {
+    alert("please input  a valid location");
+  }
 
-  const city = searchInput.value;
-  await geo(city);
+  searchInput.value = "";
+});
+submitSearch.addEventListener("click", async (e) => {
+  e.stopPropagation();
+  if (searchInput.value.trim()) {
+    const city = searchInput.value;
+    searchLoad();
+    await geo(city);
+    form.blur();
+  } else {
+    alert("please input  a valid location");
+  }
+
   searchInput.value = "";
 });
 

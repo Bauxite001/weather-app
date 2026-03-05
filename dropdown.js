@@ -1,6 +1,6 @@
 import { getWeatherData } from "./state.js";
 import { hourlyForcast } from "./contents.js";
-
+const suggestion = document.querySelector(".search-suggestions");
 export function dropDown1(trigger, target) {
   trigger.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -9,6 +9,7 @@ export function dropDown1(trigger, target) {
 
   window.addEventListener("click", () => {
     target.classList.remove("make-visible");
+    suggestion.style.display = "none";
   });
 
   target.addEventListener("click", (e) => {
@@ -74,80 +75,3 @@ export function higlighted(days, selected) {
     });
   });
 }
-
-// // Unit groups
-// const tempItems = document.querySelectorAll(".temp-cels, .temp-fah");
-// const windItems = document.querySelectorAll(".speed-km, .speed-m");
-// const precipItems = document.querySelectorAll(".precip-mil, .precip-inch");
-
-// // Handle individual clicks (single select)
-// [tempItems, windItems, precipItems].forEach((group) => {
-//   group.forEach((item) => {
-//     item.addEventListener("click", () => {
-//       group.forEach((i) => (i.querySelector("span").style.opacity = "0"));
-//       item.querySelector("span").style.opacity = "1";
-//     });
-//   });
-// });
-
-// // Switch to Imperial button
-// const imperialBtn = document.querySelector(".unit-button");
-// let imperialActive = false;
-
-// imperialBtn.addEventListener("click", () => {
-//   imperialActive = !imperialActive;
-
-//   if (imperialActive) {
-//     // Imperial units
-//     tempItems.forEach(
-//       (i) =>
-//         (i.querySelector("span").style.opacity = i.classList.contains(
-//           "temp-fah",
-//         )
-//           ? "1"
-//           : "0"),
-//     );
-//     windItems.forEach(
-//       (i) =>
-//         (i.querySelector("span").style.opacity = i.classList.contains("speed-m")
-//           ? "1"
-//           : "0"),
-//     );
-//     precipItems.forEach(
-//       (i) =>
-//         (i.querySelector("span").style.opacity = i.classList.contains(
-//           "precip-inch",
-//         )
-//           ? "1"
-//           : "0"),
-//     );
-//     imperialBtn.textContent = "Switch to Metric";
-//   } else {
-//     // Metric units
-//     tempItems.forEach(
-//       (i) =>
-//         (i.querySelector("span").style.opacity = i.classList.contains(
-//           "temp-cels",
-//         )
-//           ? "1"
-//           : "0"),
-//     );
-//     windItems.forEach(
-//       (i) =>
-//         (i.querySelector("span").style.opacity = i.classList.contains(
-//           "speed-km",
-//         )
-//           ? "1"
-//           : "0"),
-//     );
-//     precipItems.forEach(
-//       (i) =>
-//         (i.querySelector("span").style.opacity = i.classList.contains(
-//           "precip-mil",
-//         )
-//           ? "1"
-//           : "0"),
-//     );
-//     imperialBtn.textContent = "Switch to Imperial";
-//   }
-// });

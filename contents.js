@@ -2,7 +2,14 @@ import { dom } from "./variable.js";
 import { weatherCode } from "./weathercode.js";
 const { hourlyGrid, dailyForecast, secondResult, firstResult } = dom;
 
-export function dailyBg(country, name, currentTime, temp, code) {
+export function dailyBg(country, name, currentTime, temp, code, isDay) {
+  function isDayCode(isDay) {
+    if (isDay === 1) {
+      return `./images/icon-sunny.webp`;
+    } else {
+      return `./images/moon.svg`;
+    }
+  }
   const div = document.createElement("div");
   div.classList.add("background-words");
 
