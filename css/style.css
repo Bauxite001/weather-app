@@ -222,7 +222,7 @@ hr {
   justify-content: center;
 }
 .first-result {
-  background-image: url("./images/bg-today-small.svg");
+  background-image: url("../images/bg-today-small.svg");
   height: 286px;
   width: 350px;
   background-repeat: no-repeat;
@@ -397,7 +397,7 @@ hr {
 
 @media (min-width: 583px) {
   .first-result {
-    background-image: url("./images/bg-today-large.svg");
+    background-image: url("../images/bg-today-large.svg");
     height: 286px;
     width: 100%;
     background-repeat: no-repeat;
