@@ -1,6 +1,6 @@
 import { renderWeather, setWeatherData } from "./state.js";
 import { errorState } from "./errorState.js";
-import { loading } from "./loadingState.js";
+import { loading } from "../loadingState.js";
 const flex = document.querySelector(".desktop-flex");
 
 let weatherData;
