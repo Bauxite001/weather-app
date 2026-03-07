@@ -10,21 +10,29 @@ body {
   margin-bottom: 10px;
   font-family: "DM Sans", sans-serif;
   font-weight: 400;
+  padding: 4px;
 }
 h1 {
   font-family: "Bricolage Grotesque", sans-serif;
   font-weight: 700;
 }
+
+/* ---------------
+
+              tweakkkkkkkkkkkkkk 
+              
+                         --------------- */
+
 main,
 header {
-  max-width: 95%;
+  max-width: 100%;
   margin: auto;
 }
 
 .head {
   display: flex;
   justify-content: space-between;
-  width: 97%;
+  width: 100%;
   align-items: center;
   margin-top: 20px;
 }
@@ -76,10 +84,6 @@ header {
   border-radius: 8px;
 }
 
-.units span {
-  opacity: 0;
-}
-
 .units p {
   display: flex;
   justify-content: space-between;
@@ -127,6 +131,8 @@ hr {
   font-size: 50px;
   text-align: center;
   margin: 20px;
+  width: 300px;
+  word-spacing: 10px;
 }
 .main-search {
   position: relative;
@@ -209,7 +215,7 @@ hr {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, auto);
-  width: 95%;
+  width: 100%;
 }
 .wrap-first-result {
   display: flex;
@@ -220,11 +226,10 @@ hr {
   height: 286px;
   width: 350px;
   background-repeat: no-repeat;
-  background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  gap: 40px;
   padding: 3em;
 }
 
@@ -283,7 +288,7 @@ hr {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   /* grid-template-rows: repeat(3, auto); */
-  gap: 12px;
+  gap: 10px;
   margin: 20px 0;
 }
 .daily-forcast-grid {
@@ -294,6 +299,7 @@ hr {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 4px;
   box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.336);
 }
 
@@ -378,7 +384,7 @@ hr {
 
 .daily-forcast-temp {
   display: flex;
-  gap: 30px;
+  gap: 10px;
   margin-top: 10px;
 }
 
@@ -396,6 +402,7 @@ hr {
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
+    justify-content: space-between;
     border-radius: 10px;
     flex-direction: row;
   }
@@ -411,13 +418,20 @@ hr {
 @media (min-width: 1024px) {
   main,
   header {
-    max-width: 1000px;
-    margin: auto;
-    margin-top: 10px;
+    max-width: 1200px;
+    /* margin: 0 auto;
+    padding: 0 20px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .head {
-    width: 100%;
+    max-width: 910px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .head .logo img {
     height: 50px;
@@ -425,10 +439,9 @@ hr {
   }
   .desktop-flex {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    gap: 30px;
+    gap: 25px;
     margin-top: 10px;
+    align-items: flex-start;
   }
   .first-result {
     height: 220px;
@@ -440,18 +453,18 @@ hr {
   }
 
   .fourth-result-wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    width: 300px;
+    flex-shrink: 0;
   }
-  .desktop-grid > div:first-child {
-    flex: 1;
+  .desktop-flex > div:first-child {
+    max-width: 720px;
+    width: 100%;
   }
 
   .main-search {
     flex-direction: row;
     gap: 15px;
-    max-width: 500px;
+    max-width: 550px;
     margin: auto;
     margin-top: 20px;
   }
@@ -461,6 +474,10 @@ hr {
 
   .section1-text {
     margin: 20px 0;
+    text-align: center;
+    margin: 20px;
+    width: 100%;
+    word-spacing: normal;
   }
 
   .submit-search {
@@ -471,14 +488,13 @@ hr {
   .second-result {
     display: grid;
     margin: 20px 0;
-    gap: 15px;
+    gap: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   .daily-forcast {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    /* grid-template-rows: repeat(3, auto); */
+    grid-template-columns: repeat(7, minmax(0, 1fr));
     gap: 12px;
     margin: 20px 0;
   }
@@ -599,9 +615,4 @@ hr {
 }
 .submit-search:focus {
   border: 2px solid blue;
-  margin: 2px 2px;
-}
-
-.spanJs {
-  opacity: 1;
 }

@@ -124,6 +124,7 @@ export async function summoningJutsu(lat, lon, country, name) {
     flex.classList.remove("flex-hidden");
     renderWeather();
   } catch (err) {
+    errorState();
     console.error("Error fetching weather:", err);
   }
 }

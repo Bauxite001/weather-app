@@ -49,15 +49,21 @@ export function renderWeather() {
   // /*///////////
 
   function convertTemp(temp) {
-    return unit === "metric" ? temp : ((temp * 9) / 5 + 32).toFixed(1);
+    return unit === "metric"
+      ? Math.round(temp)
+      : Math.round((temp * 9) / 5 + 32);
   }
 
   function convertWind(speed) {
-    return unit === "metric" ? speed : (speed * 0.621371).toFixed(1);
+    return unit === "metric"
+      ? Math.round(speed) + " Km"
+      : Math.round(speed * 0.621371) + " mph";
   }
 
   function convertPrecip(precip) {
-    return unit === "metric" ? precip : (precip * 0.0393701).toFixed(1);
+    return unit === "metric"
+      ? Math.round(precip) + " in"
+      : Math.round(precip * 0.0393701) + " mm";
   }
 
   // /*///////////
@@ -74,7 +80,6 @@ export function renderWeather() {
       year: "numeric",
     }),
     convertTemp(currentTemp),
-    currentCode,
     isDay,
   );
   feelsLIke(
@@ -94,28 +99,26 @@ export function renderWeather() {
 
 function switchFunc() {
   const temps = [tempCels, tempFah];
+  unit = unit === "metric" ? "imperial" : "metric";
+  renderWeather();
   const speed = [speedKm, speedM];
   const precip = [precipMil, precipInch];
-  unit = unit === "metric" ? "imperial" : "metric";
+  [...temps, ...speed, ...precip].forEach((all) => {
+    all.textContent = "";
+  });
+
   if (unit === "metric") {
     switchB.textContent = "Switch to Imperial";
-    [...temps, ...speed, ...precip].forEach((all) => {
-      all.classList.remove("spanJs");
-    });
-
-    tempCels.classList.add("spanJs");
-    speedKm.classList.add("spanJs");
-    precipMil.classList.add("spanJs");
+    tempCels.textContent = "✔";
+    speedKm.textContent = "✔";
+    precipMil.textContent = "✔";
   } else {
     switchB.textContent = "Switch to metric";
-    [...temps, ...speed, ...precip].forEach((temp) => {
-      temp.classList.remove("spanJs");
-    });
-    tempFah.classList.add("spanJs");
-    speedM.classList.add("spanJs");
-    precipInch.classList.add("spanJs");
+
+    tempFah.textContent = "✔";
+    speedM.textContent = "✔";
+    precipInch.textContent = "✔";
   }
-  renderWeather();
 }
 
 switchB.addEventListener("click", switchFunc);

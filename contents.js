@@ -2,7 +2,7 @@ import { dom } from "./variable.js";
 import { weatherCode } from "./weathercode.js";
 const { hourlyGrid, dailyForecast, secondResult, firstResult } = dom;
 
-export function dailyBg(country, name, currentTime, temp, code, isDay) {
+export function dailyBg(country, name, currentTime, temp, isDay) {
   function isDayCode(isDay) {
     if (isDay === 1) {
       return `./images/icon-sunny.webp`;
@@ -25,7 +25,7 @@ export function dailyBg(country, name, currentTime, temp, code, isDay) {
   div1.classList.add("background-icon");
 
   const img = document.createElement("img");
-  img.src = `${weatherCode(code)}`;
+  img.src = `${isDayCode(isDay)}`;
   img.alt = "";
   img.width = 60;
   img.height = 60;
@@ -63,7 +63,7 @@ export function feelsLIke(feelsLike, humidity, wind, prep) {
     secondResult.appendChild(div);
   };
 
-  helper("Feels like", feelsLike);
+  helper("Feels like", feelsLike + "°");
   helper("Humidity", humidity + "%");
   helper("Wind", wind);
   helper("Precipitation", prep);
