@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+    <link rel="stylesheet" href="./css/themes.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,7 +21,17 @@
         <div class="logo">
           <img src="./images/logo.svg" alt="logo" class="logo" />
         </div>
+        <button class="theme-toggle">☀ Light</button>
         <div class="unit-container">
+          <button class="compare-trigger">
+            <img
+              src="./images/icon-compare.png"
+              width="16"
+              height="16"
+              alt="compare"
+            />
+            <span>Compare</span>
+          </button>
           <div class="drop-down-cont">
             <img src="./images/icon-units.svg" alt="units" class="icon" />
             <p>Units</p>
@@ -58,11 +70,33 @@
               class="search-input"
               autofocus
             />
+            <button type="button" class="mic-btn" aria-label="Voice search">
+              <img
+                src="./images/icon-mic.png"
+                width="20"
+                height="20"
+                alt="mic"
+              />
+            </button>
           </form>
           <div class="search-suggestions"></div>
           <button type="submit" class="submit-search">Search</button>
         </div>
       </section>
+
+      <section class="favorites-section">
+        <div class="favorites-header">
+          <img
+            src="./images/icon-bookmark.png"
+            width="16"
+            height="16"
+            alt="favorites"
+          />
+          <p>Saved Locations</p>
+        </div>
+        <div class="favorites-list"></div>
+      </section>
+
       <section class="desktop-flex">
         <div>
           <div class="result">
@@ -88,6 +122,7 @@
 
             <!-- AFTER BACKGROUND -->
             <div class="second-result"></div>
+            <div class="sun-times"></div>
           </div>
           <div>
             <h2>Daily Forecast</h2>
@@ -119,5 +154,23 @@
         </div>
       </section>
     </main>
+    <div class="compare-modal">
+      <div class="compare-modal-inner">
+        <div class="compare-modal-header">
+          <h2>Compare Locations</h2>
+          <button class="compare-close">✕</button>
+        </div>
+        <div class="compare-search-row">
+          <input
+            type="text"
+            class="compare-search-input"
+            placeholder="Search a city..."
+          />
+          <button class="compare-search-btn">Add</button>
+        </div>
+        <div class="compare-suggestions"></div>
+        <div class="compare-panel"></div>
+      </div>
+    </div>
   </body>
 </html>

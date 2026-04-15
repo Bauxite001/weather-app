@@ -3,9 +3,19 @@ import { dropDown1, dropdown2, higlighted } from "./dropdown.js";
 import { geo } from "./api.js";
 import { landingPage } from "./errorState.js";
 import { searchLoad } from "./loadingState.js";
+import { pos } from "./currentLocation.js";
+import { renderFavorites } from "./favorites.js";
+import { initCompare } from "./compare.js";
+import { initVoiceSearch } from "./voiceSearch.js";
+import { initTheme } from "./themeManager.js";
 const form = document.getElementById("search-form");
 
+initTheme();
+initCompare();
+renderFavorites();
 landingPage();
+initVoiceSearch();
+pos();
 const {
   unitDropDown,
   units,

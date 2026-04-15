@@ -1,0 +1,87 @@
+body.bg-sunny {
+  background: linear-gradient(160deg, hsl(220, 80%, 10%), hsl(243, 96%, 9%));
+  animation: pulseSunny 8s ease-in-out infinite alternate;
+}
+body.bg-night {
+  background: linear-gradient(160deg, hsl(243, 96%, 5%), hsl(260, 60%, 8%));
+  animation: pulseNight 10s ease-in-out infinite alternate;
+}
+body.bg-rain {
+  background: linear-gradient(160deg, hsl(220, 50%, 8%), hsl(210, 60%, 12%));
+  animation: pulseRain 6s ease-in-out infinite alternate;
+}
+body.bg-drizzle {
+  background: linear-gradient(160deg, hsl(210, 40%, 10%), hsl(220, 50%, 14%));
+  animation: pulseRain 8s ease-in-out infinite alternate;
+}
+body.bg-storm {
+  background: linear-gradient(160deg, hsl(243, 50%, 6%), hsl(260, 40%, 10%));
+  animation: pulseStorm 4s ease-in-out infinite alternate;
+}
+body.bg-snow {
+  background: linear-gradient(160deg, hsl(200, 40%, 10%), hsl(210, 30%, 16%));
+  animation: pulseSnow 10s ease-in-out infinite alternate;
+}
+body.bg-fog {
+  background: linear-gradient(160deg, hsl(230, 20%, 12%), hsl(240, 20%, 16%));
+  animation: pulseFog 12s ease-in-out infinite alternate;
+}
+body.bg-overcast {
+  background: linear-gradient(160deg, hsl(240, 20%, 8%), hsl(243, 25%, 13%));
+  animation: pulseFog 10s ease-in-out infinite alternate;
+}
+body.bg-partly-cloudy {
+  background: linear-gradient(160deg, hsl(230, 60%, 9%), hsl(243, 50%, 13%));
+  animation: pulseSunny 9s ease-in-out infinite alternate;
+}
+@keyframes pulseSunny {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+@keyframes pulseNight {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+@keyframes pulseRain {
+  from {
+    background-position: 0% 100%;
+  }
+  to {
+    background-position: 100% 0%;
+  }
+}
+@keyframes pulseStorm {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.1);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+@keyframes pulseSnow {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+@keyframes pulseFog {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}

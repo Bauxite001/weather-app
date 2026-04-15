@@ -1,5 +1,13 @@
-import { hourlyForcast, dailyForcast, feelsLIke, dailyBg } from "./contents.js";
+import { animateBg } from "./backgrounds.js";
+import {
+  hourlyForcast,
+  dailyForcast,
+  feelsLIke,
+  dailyBg,
+  sunriseSunset,
+} from "./contents.js";
 import { dom } from "./variable.js";
+
 const switchB = document.querySelector(".unit-button");
 let unit = "metric";
 let weatherData;
@@ -30,6 +38,9 @@ export function renderWeather() {
     apparent_temperature: appTemp,
     wind_speed_10m: wind,
     relative_humidity_2m: humidity,
+    uv_index: uvIndex,
+    visibility,
+    surface_pressure: pressure,
   } = weatherData.current;
 
   const {
@@ -37,6 +48,8 @@ export function renderWeather() {
     weather_code: dailyWeatherCode,
     temperature_2m_max: maxTemp,
     temperature_2m_min: minTemp,
+    sunrise,
+    sunset,
   } = weatherData.daily;
   const {
     time: hourlyTime,
@@ -79,15 +92,21 @@ export function renderWeather() {
       day: "numeric",
       year: "numeric",
     }),
+
     convertTemp(currentTemp),
     isDay,
   );
+  animateBg(currentCode, isDay);
   feelsLIke(
     convertTemp(appTemp),
     humidity,
     convertWind(wind),
     convertPrecip(prep),
+    uvIndex,
+    visibility,
+    pressure,
   );
+  sunriseSunset(sunrise, sunset);
   dailyForcast(
     dailyTime,
     dailyWeatherCode,
