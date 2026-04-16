@@ -1,60 +1,11 @@
 body[data-theme="dark"] {
-  --bg-primary: hsl(243, 96%, 9%);
-  --bg-card: hsl(243, 27%, 20%);
-  --bg-card-deep: hsl(243, 23%, 30%);
-  --text-primary: #ffffff;
-  --text-muted: #ffffff80;
-  --border-color: rgba(255, 255, 255, 0.2);
+  background-color: hsl(243, 96%, 9%);
 }
+
 body[data-theme="light"] {
-  --bg-primary: hsl(220, 30%, 94%);
-  --bg-card: hsl(220, 20%, 88%);
-  --bg-card-deep: hsl(220, 20%, 82%);
-  --text-primary: hsl(243, 50%, 15%);
-  --text-muted: hsl(243, 20%, 40%);
-  --border-color: rgba(0, 0, 0, 0.12);
+  background-color: hsl(220, 60%, 92%);
 }
+
 body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  transition:
-    background-color 0.4s ease,
-    color 0.4s ease;
-}
-.units,
-.drop-down-cont,
-.fav-item,
-.compare-trigger,
-.search,
-.submit-search,
-.grid1,
-.daily-forcast-grid,
-.fourth-result-wrapper,
-.hourly-result,
-.selected-container,
-.hourly-day-days,
-.compare-modal-inner,
-.compare-card,
-.compare-search-input,
-.sun-times-inner {
-  background-color: var(--bg-card);
-  color: var(--text-primary);
-  border-color: var(--border-color);
-  transition:
-    background-color 0.4s ease,
-    color 0.4s ease;
-}
-.fourth-result-wrapper,
-.sun-times-inner,
-.grid1 {
-  background-color: var(--bg-card-deep);
-}
-.day,
-.grid1 h2,
-.sun-label,
-.hourly p,
-.favorites-header,
-.no-favs,
-.compare-details {
-  color: var(--text-muted);
+  transition: background-color 0.4s ease;
 }

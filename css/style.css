@@ -223,6 +223,7 @@ hr {
 }
 .first-result {
   position: relative;
+  overflow: hidden;
   background-image: url("../images/bg-today-small.svg");
   height: 286px;
   width: 350px;
@@ -398,6 +399,8 @@ hr {
 
 @media (min-width: 583px) {
   .first-result {
+    position: relative;
+    overflow: hidden;
     background-image: url("../images/bg-today-large.svg");
     height: 286px;
     width: 100%;
@@ -445,6 +448,8 @@ hr {
     align-items: flex-start;
   }
   .first-result {
+    position: relative;
+    overflow: hidden;
     height: 220px;
     border-radius: 20px;
   }
@@ -666,10 +671,19 @@ hr {
   position: absolute;
   top: 12px;
   right: 12px;
-  background: none;
+  background: rgba(0, 0, 0, 0.3);
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.bookmark-btn:hover {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .compare-trigger {
@@ -1015,6 +1029,82 @@ hr {
 }
 
 /* ---- DAILY FORECAST - always 7 cols on desktop, 3 on mobile ---- */
+.daily-forcast {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (min-width: 583px) {
+  .daily-forcast {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .daily-forcast {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+}
+
+/* ---- SECOND RESULT GRID ---- */
+.second-result {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 1024px) {
+  .second-result {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---- HIDE THEME TOGGLE ---- */
+.theme-toggle {
+  display: none !important;
+}
+
+/* ---- BOOKMARK BUTTON - visible on all screen sizes ---- */
+.bookmark-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.25);
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.bookmark-btn:hover {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* ---- FIRST RESULT - needed for bookmark positioning ---- */
+.first-result {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---- FAVORITES REMOVE BUTTON ---- */
+.fav-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  color: #ffffff80;
+  flex-shrink: 0;
+}
+
+.fav-remove:hover {
+  color: #fff;
+}
+
+/* ---- DAILY FORECAST GRID ---- */
 .daily-forcast {
   grid-template-columns: repeat(3, 1fr);
 }
